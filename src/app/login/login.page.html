@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+  <div>
+    <!-- <center><img src="assets/images/unbin.png" class="img-atas"></center> -->
+    <center><img src="assets/images/finkom1.png" class="img-atas"></center>
+  </div>
+
+  <div class="title">
+    <h3></h3>
+  </div>
+ 
+    <ion-item class="wrap-input">
+      <ion-input [(ngModel)]="username" type="text" placeholder="NPM"></ion-input>
+    </ion-item>
+  
+    <ion-item class="wrap-input">
+      <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+
+    <div class="container-form-btn">
+      <button (click)="login()" class="form-btn custom-font"><b>LOGIN</b></button>
+    </div>
+
+    <div>
+      <center><img src="assets/images/ada.png" class="img-bawah"></center>
+    </div>
+  </ion-content>

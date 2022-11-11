@@ -1,0 +1,97 @@
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      Input Captures
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+ -->
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+
+  <div class="main-header" *ngFor="let mahasiswa of bimbinganData;">
+    <ion-card>
+      <!-- <ion-card-header> Form Input </ion-card-header> -->
+      <ion-card-content>
+        <ion-item lines="none" class="showdata"> Tahun Akademik :
+          <!-- <ion-icon name="calendar"></ion-icon>  -->
+          <ion-input disabled="true" [(ngModel)]="thn_akademik"> {{mahasiswa.thn_akademik}} </ion-input> 
+        </ion-item>
+        <ion-item lines="none" class="showdata"> Judul :
+          <!-- <ion-icon name="book"> </ion-icon>  -->
+          <ion-input disabled="true" [(ngModel)]="judul"> {{mahasiswa.judul}} </ion-input>
+        </ion-item>
+        <ion-item lines="none" class="showdata"> Topik :
+          <!-- <ion-icon name="book"> </ion-icon>  -->
+          <ion-input disabled="true" [(ngModel)]="topik"> {{mahasiswa.topik}} </ion-input> 
+        </ion-item>        
+        <ion-item lines="none" class="showdata"> Dosen Pembimbing :
+          <!-- <ion-icon name="person"> </ion-icon>  -->
+          <ion-input disabled="true" [(ngModel)]="nama_dosen"> {{mahasiswa.nama_dosen}} </ion-input> 
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-list *ngFor="let mahasiswa of bimbinganData;">
+    <ion-item class="inputdata">
+      <ion-label>Kode Bimbingan : </ion-label>
+      <ion-input [clearInput]="true" disabled="true" [(ngModel)]="kd_bimbingan"> {{mahasiswa.kd_bimbingan}} </ion-input>
+    </ion-item>
+    <ion-item class="inputdata">
+      <ion-label>Tanggal : </ion-label>
+      <ion-input type="datetime-local" [clearInput]="true" [(ngModel)]="dentry">
+      </ion-input>
+    </ion-item>
+    <ion-item class="inputdata">
+      <ion-label> Keterangan : </ion-label>
+      <ion-textarea placeholder="Type something here" [autoGrow]="true" [clearInput]="true" [(ngModel)]="keterangan">
+      </ion-textarea>
+    </ion-item>
+    <ion-item class="inputdata">
+      <ion-label >Foto : </ion-label>
+      <ion-input type="file" [clearInput]="true" (change)="imageUpload($event)"> </ion-input>
+    </ion-item>
+    <div *ngIf="active === '0'">
+      <ion-button disabled="true" expand="block" color="primary">Save</ion-button>
+    </div>
+    <div  *ngIf="active === '1'">
+      <ion-button disabled="false" expand="block" (click)="addData()" (click)="Reset()" color="primary">Save</ion-button>
+    </div>
+  </ion-list>
+
+
+  <!-- <div *ngFor="let mahasiswa of bimbinganData;">
+
+    <ion-label>Kode Bimbingan</ion-label>
+    <ion-item>
+      <ion-input disabled="true" [(ngModel)]="kd_bimbingan"> {{mahasiswa.kd_bimbingan}} </ion-input>
+    </ion-item>
+
+    <ion-label>Tanggal</ion-label>
+    <ion-item>
+      <ion-input [(ngModel)]="dentry"></ion-input>
+    </ion-item>
+
+    <ion-label>Keterangan</ion-label>
+    <ion-item>
+      <ion-input [(ngModel)]="keterangan"></ion-input>
+    </ion-item>
+
+    <ion-label>Foto</ion-label>
+    <ion-item>
+      <input type="file" (change)="imageUpload($event)" />
+    </ion-item>
+
+    <ion-button expand="block" (click)="addData()" color="primary">Save</ion-button>
+
+  </div> -->
+</ion-content>

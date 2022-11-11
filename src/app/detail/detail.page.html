@@ -1,0 +1,68 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      Detail
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <div>
+    <ion-card>
+      <ion-card-header>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- <ion-item lines="none"> Tahun Akademik :
+          <ion-icon name="calendar"></ion-icon>
+          <ion-input disabled="true" [(ngModel)]="thn_akademik"> {{thn_akademik}} </ion-input> 
+        </ion-item>
+        <ion-item lines="none"> Judul :
+         <ion-icon name="book"> </ion-icon> 
+          <ion-input disabled="true" [(ngModel)]="judul"> {{judul}} </ion-input>
+        </ion-item>
+        <ion-item lines="none"> Topik :
+          <ion-icon name="book"> </ion-icon>
+          <ion-input disabled="true" [(ngModel)]="topik"> {{topik}} </ion-input> 
+        </ion-item>        
+        <ion-item lines="none"> Dosen Pembimbing :
+          <ion-icon name="person"> </ion-icon> 
+          <ion-input disabled="true" [(ngModel)]="nama_dosen"> {{nama_dosen}} </ion-input> 
+        </ion-item> -->
+
+        <ion-label>Kode Bimbingan</ion-label>
+        <ion-item>
+          <ion-input disabled="true"> {{kd_bimbingan}} </ion-input>
+        </ion-item>
+
+        <ion-label>Tahun Akademik</ion-label>
+        <ion-item>
+          <ion-input disabled="true"> {{thn_akademik}} </ion-input>
+        </ion-item>
+    
+        <ion-label>Tanggal</ion-label>
+        <ion-item>
+          <ion-input disabled="true"> {{dentry}} </ion-input>
+        </ion-item>
+    
+        <ion-label>Keterangan</ion-label>
+        <ion-item>
+          <ion-input disabled="true"> {{keterangan}} </ion-input>
+        </ion-item>
+    
+        
+        <ion-label>Foto</ion-label>
+        <img src="https://edmrbimbingan.gebyar-it.xyz/elearning_native/uploads/{{photo}}">
+        <!-- <img src="http://localhost/elearning_native/uploads/{{photo}}"> -->
+        <!-- <ion-item>
+          <input disabled="true" type="file" (change)="imageUpload($event)" />
+        </ion-item> -->
+
+        <div class="container-form-btn">
+          <button (click)="backData()" class="form-btn custom-font"><b>Back</b></button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,10 @@
+{
+  "name": "risman_per14",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

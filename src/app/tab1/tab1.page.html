@@ -1,0 +1,84 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-header class="ion-no-border" >
+    <ion-toolbar>
+      <ion-button slot="start" class="bordered" fill="solid" color="light" routerLink="/tabs/tab4">
+        <ion-icon color="dark" name="notifications-outline"></ion-icon>
+      </ion-button>
+      <!-- <ion-title>Student Card</ion-title> -->
+      <ion-button slot="end" class="bordered" fill="solid" color="light" (click)="logout()">
+        <ion-icon color="dark" name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <img src="assets/images/unbinlogo.png" alt="" width="60%">
+    <div class="overlay">
+      <ion-avatar>
+        <!-- <img src="{{foto}}" alt="" > -->
+        <img src="assets/images/finkom1.png" alt="" >
+      </ion-avatar>
+    </div>
+  </div>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> {{name}} </ion-card-title>
+      <ion-card-subtitle> {{npm}} </ion-card-subtitle>
+    </ion-card-header>
+<!-- 
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="id-card"> </ion-icon>
+        <ion-label> {{npm}} </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="call"> </ion-icon>
+        <ion-label> {{telp}} </ion-label>
+      </ion-item>
+    </ion-card-content> -->
+
+    <ion-card class="img">
+      <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="aclass" errorCorrectionLevel="L"></ngx-qrcode>
+      <!-- <img src="{{code}}" alt="" width="50%"> -->
+    </ion-card>
+
+    <ion-card class="maps">
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe width="600" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=STIKOM%20Binaniaga%20Bogor&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+          <a href="https://123movies-to.org">123movies</a><br>
+          <style>.mapouter{position:relative;text-align:right;height:250px;width:600px;}</style>
+          <a href="https://www.embedgooglemap.net">google map on website</a>
+          <style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:600px;}</style>
+        </div>
+      </div>
+    </ion-card>
+  </ion-card>
+
+    <!-- <ion-input type="text" placeholder="Enter Text" [{ngModel}]="qrdata"></ion-input>
+    <button ion-button full color="secondary" (click) = "create">Generate</button>
+    <button ion-button full color="secondary" (click) = "clear">Clear</button>
+  
+  
+      <ion-card *ngIf="createCode">
+        <ngx-qrcode 
+      [qrc-value]="createCode">
+    </ngx-qrcode>
+    <ion-card-content>
+      Your QR Code : {{createCode}}
+    </ion-card-content>
+      </ion-card> -->
+</ion-content>
+
